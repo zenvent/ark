@@ -78,7 +78,7 @@
   {"name": "Raptor", "description": "Pack bonus and vocalizations provide buffs.", "diet": "Carnivore"},
   {"name": "Rex", "description": "Best tank and DPS for bosses, has a roar ability.", "diet": "Carnivore"},
   {"name": "Sabertooth", "description": "Gathers chitin, keratin, and hide efficiently.", "diet": "Carnivore"},
-  {"name": "Salmon", "description": "Can be killed for prime fish.", "diet": "Carnivore"},
+  {"name": "Sabertooth Salmon", "description": "Can be killed for prime fish.", "diet": "Carnivore"},
   {"name": "Sarco", "description": "Quick water movement, amphibious, no stamina drain.", "diet": "Carnivore"},
   {"name": "Spinosaur", "description": "Good swimmer with water-based boosts.", "diet": "Carnivore"},
   {"name": "Stegosaurus", "description": "Armored plates drain turret ammo.", "diet": "Herbivore"},
