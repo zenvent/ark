@@ -55,8 +55,7 @@
         }
 
         .creature-image {
-            width: 33%;
-            height: auto;
+            height: 120px;
             filter: invert(100%); /* Invert the image colors */
         }
 
@@ -147,7 +146,7 @@
 
                     const creatureImage = document.createElement('img');
                     creatureImage.classList.add('creature-image');
-                    creatureImage.src = `img/${creature.image}`;
+                    creatureImage.src = `img/${creature.name}.png`;
 
                     // Add click event to open Ark Wiki page
                     card.addEventListener('click', () => openArkWikiPage(creature.name));
