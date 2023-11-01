@@ -69,17 +69,18 @@
                     description.textContent = creature.description;
 
                     const diet = document.createElement('p');
-                    diet.textContent = `Diet: `;
 
                     // Add diet icons based on the diet type
                     const dietIcon = document.createElement('span');
                     dietIcon.classList.add('diet-icon');
                     if (creature.diet.toLowerCase() === 'carnivore') {
                         dietIcon.innerHTML = '&#127830;';  // Meat icon
+                        dietIcon.setAttribute('title', 'Carnivore');
                     } else if (creature.diet.toLowerCase() === 'herbivore') {
                         dietIcon.innerHTML = '🌿';  // Herb icon
+                        dietIcon.setAttribute('title', 'Herbivore');
                     }
-
+                    
                     diet.appendChild(dietIcon);
 
                     card.appendChild(name);
