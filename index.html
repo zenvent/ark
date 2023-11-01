@@ -28,18 +28,15 @@
             cursor: pointer; /* Add cursor pointer to indicate it's clickable */
         }
 
-        .card h3 {
-            font-size: 24px;
-            color: #1cb4c8;
-            margin: 0;
-        }
-
         .card-title {
             flex: 1;
             text-align: left; /* Align title to the left */
             position: absolute;
             top: 44px; /* Position title at the top left corner */
             left: 10px;
+            font-size: 24px;
+            color: #1cb4c8;
+            margin: 0;
         }
 
         .card-description {
@@ -49,9 +46,10 @@
 
         .diet-icon {
             font-size: 24px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
+        }
+
+        .diet-icon:hover {
+            cursor: help;
         }
 
         .creature-image {
@@ -60,22 +58,21 @@
             filter: invert(100%);
         }
 
-        input[type="text"] {
+        .search-box {
             font-size: 24px;
             padding: 10px;
+            margin: 10px;
             border: none;
             border-radius: 5px;
             background-color: #2d2d2d;
             color: #ffffff;
         }
 
-        .diet-icon:hover {
-            cursor: help;
-        }
+
     </style>
 </head>
 <body>
-    <input type="text" id="search" placeholder="Search anything...">
+    <input type="text" id="search" class="search-box" placeholder="Search anything...">
     <div id="creature-cards"></div>
 
     <script>
@@ -138,7 +135,7 @@
                     const dietIcon = document.createElement('span');
                     dietIcon.classList.add('diet-icon');
                     if (creature.diet.toLowerCase() === 'carnivore') {
-                        dietIcon.innerHTML = '&#127830;';  // Meat icon
+                        dietIcon.innerHTML = '&#129385;';  // Meat icon
                         dietIcon.setAttribute('title', 'Carnivore');
                     } else if (creature.diet.toLowerCase() === 'herbivore') {
                         dietIcon.innerHTML = '🌿';  // Herb icon
