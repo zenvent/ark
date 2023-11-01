@@ -72,7 +72,7 @@
   {"name": "Plesiosaur", "description": "Platform saddle, high weight, super fast.", "diet": "Carnivore"},
   {"name": "Procoptodon", "description": "Can carry an extra player and babies in pouch.", "diet": "Herbivore"},
   {"name": "Pteranodon", "description": "Extremely fast flying mount.", "diet": "Carnivore"},
-  {"name": "Pulmonoscorpius", "description": "Capable knockout Dino.", "diet": "Carnivore"},
+  {"name": "Pulmonoscorpius", "description": "Scorpion. Capable knockout Dino.", "diet": "Carnivore"},
   {"name": "Purlovia", "description": "Acts as a land mine and hidden vault.", "diet": "Carnivore"},
   {"name": "Quetzal", "description": "Platform saddle, high health and weight.", "diet": "Herbivore"},
   {"name": "Raptor", "description": "Pack bonus and vocalizations provide buffs.", "diet": "Carnivore"},
