@@ -19,6 +19,10 @@
         .card p {
             font-size: 14px;
         }
+
+        .diet-icon {
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
@@ -65,7 +69,18 @@
                     description.textContent = creature.description;
 
                     const diet = document.createElement('p');
-                    diet.textContent = `Diet: ${creature.diet}`;
+                    diet.textContent = `Diet: `;
+
+                    // Add diet icons based on the diet type
+                    const dietIcon = document.createElement('span');
+                    dietIcon.classList.add('diet-icon');
+                    if (creature.diet.toLowerCase() === 'carnivore') {
+                        dietIcon.innerHTML = '&#127830;';  // Meat icon
+                    } else if (creature.diet.toLowerCase() === 'herbivore') {
+                        dietIcon.innerHTML = '🌿';  // Herb icon
+                    }
+
+                    diet.appendChild(dietIcon);
 
                     card.appendChild(name);
                     card.appendChild(description);
