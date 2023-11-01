@@ -13,8 +13,6 @@
         #creature-cards {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            align-content: flex-start; /* Cards will rise to the top when some are hidden */
         }
 
         .card {
@@ -28,10 +26,8 @@
             flex-direction: row;
             align-items: center;
             position: relative;
-            cursor: pointer;
-            opacity: 1; /* Initially visible */
-            transform: scale(1); /* Initially at regular size */
-            transition: opacity 0.3s ease, transform 0.3s ease; /* Transition properties for hiding/showing */
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+            transition: border-color 1s;
         }
 
         .card:hover {
@@ -79,11 +75,6 @@
             color: #ffffff;
         }
 
-        .hidden {
-            opacity: 0;
-            transform: scale(0.5); /* Scale down the hidden card */
-        }
-
         .diet-icon:hover {
             cursor: help;
         }
@@ -111,9 +102,9 @@
                 const dietMatch = cardDiet.toLowerCase().includes(searchTerm);
 
                 if (nameMatch || descriptionMatch || dietMatch) {
-                    card.classList.remove('hidden'); // Show the card
+                    card.style.display = 'flex'; // Show the card
                 } else {
-                    card.classList.add('hidden'); // Hide the card
+                    card.style.display = 'none';  // Hide the card
                 }
             });
         }
