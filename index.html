@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ark Survival Creatures</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            float: left;
+        }
+
+        .card h3 {
+            font-size: 18px;
+        }
+
+        .card p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="creature-cards"></div>
+
+    <script>
+        fetch('dinos.json')  // Load the JSON file
+            .then(response => response.json())
+            .then(data => {
+                const cardContainer = document.getElementById('creature-cards');
+
+                data.forEach(creature => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+
+                    const name = document.createElement('h3');
+                    name.textContent = creature.name;
+
+                    const description = document.createElement('p');
+                    description.textContent = creature.description;
+
+                    const diet = document.createElement('p');
+                    diet.textContent = `Diet: ${creature.diet}`;
+
+                    card.appendChild(name);
+                    card.appendChild(description);
+                    card.appendChild(diet);
+
+                    cardContainer.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    </script>
+</body>
+</html>
