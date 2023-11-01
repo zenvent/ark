@@ -17,7 +17,7 @@
         .card {
             background-color: #222222;
             border: 1px solid #333;
-            border-radius: 5px;
+            border-radius: 10px;
             padding: 10px;
             margin: 10px;
             width: 400px;
@@ -26,6 +26,11 @@
             align-items: center;
             position: relative;
             cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+            transition: border-color 2s;
+        }
+
+        .card:hover {
+            border-color: #1cb4c8;
         }
 
         .card h3 {
@@ -56,6 +61,7 @@
 
         .creature-image {
             height: 120px;
+            margin-left: 20px;
             filter: invert(100%); /* Invert the image colors */
         }
 
