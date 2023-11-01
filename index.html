@@ -3,25 +3,74 @@
 <head>
     <title>Ark Survival Creatures</title>
     <style>
+        body {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        #creature-cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         .card {
-            border: 1px solid #ccc;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
             border-radius: 5px;
             padding: 10px;
             margin: 10px;
-            width: 300px;
-            float: left;
+            width: 600px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
         }
 
         .card h3 {
-            font-size: 18px;
+            font-size: 24px;
+            color: #1cb4c8;
+            margin: 0;
         }
 
-        .card p {
-            font-size: 14px;
+        .card-title {
+            flex: 1;
+            text-align: left; /* Align title to the left */
+            position: absolute;
+            top: 10px; /* Position title at the top left corner */
+            left: 10px;
+        }
+
+        .card-description {
+            flex: 2;
+            font-size: 16px;
         }
 
         .diet-icon {
-            font-size: 24px;
+            font-size: 18px;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .creature-image {
+            width: 33%;
+            height: auto;
+            filter: invert(100%); /* Invert the image colors */
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #2d2d2d;
+            color: #ffffff;
+        }
+
+        .diet-icon:hover {
+            cursor: help;
         }
     </style>
 </head>
@@ -30,47 +79,62 @@
     <div id="creature-cards"></div>
 
     <script>
-        fetch('dinos.json')  // Load the JSON file
+        const cardContainer = document.getElementById('creature-cards');
+        const searchInput = document.getElementById('search');
+
+        // Function to filter cards based on search input
+        function filterCards() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            document.querySelectorAll('.card').forEach(card => {
+                const cardName = card.getAttribute('data-name');
+                const cardDescription = card.getAttribute('data-description');
+                const cardDiet = card.getAttribute('data-diet');
+
+                const nameMatch = cardName.toLowerCase().includes(searchTerm);
+                const descriptionMatch = cardDescription.toLowerCase().includes(searchTerm);
+                const dietMatch = cardDiet.toLowerCase().includes(searchTerm);
+
+                if (nameMatch || descriptionMatch || dietMatch) {
+                    card.style.display = 'flex'; // Show the card
+                } else {
+                    card.style.display = 'none';  // Hide the card
+                }
+            });
+        }
+
+        // Attach event listener to search input
+        searchInput.addEventListener('input', filterCards);
+
+        // Function to open the Ark Wiki page in a new window when a card is clicked
+        function openArkWikiPage(creatureName) {
+            const wikiUrl = `https://ark.fandom.com/wiki/Special:Search?query=${creatureName}`;
+            window.open(wikiUrl, '_blank');
+        }
+
+        // Fetch the JSON data from dinos.json
+        fetch('dinos.json')
             .then(response => response.json())
             .then(data => {
-                const cardContainer = document.getElementById('creature-cards');
-                const searchInput = document.getElementById('search');
-
-                // Function to filter cards based on search input
-                function filterCards() {
-                    const searchTerm = searchInput.value.toLowerCase();
-
-                    data.forEach(creature => {
-                        const card = document.getElementById(`card-${creature.name}`);
-                        const nameMatch = creature.name.toLowerCase().includes(searchTerm);
-                        const descriptionMatch = creature.description.toLowerCase().includes(searchTerm);
-                        const dietMatch = creature.diet.toLowerCase().includes(searchTerm);
-
-                        if (nameMatch || descriptionMatch || dietMatch) {
-                            card.style.display = 'block'; // Show the card
-                        } else {
-                            card.style.display = 'none';  // Hide the card
-                        }
-                    });
-                }
-
-                // Attach event listener to search input
-                searchInput.addEventListener('input', filterCards);
-
                 data.forEach(creature => {
                     const card = document.createElement('div');
                     card.classList.add('card');
-                    card.id = `card-${creature.name}`;
+                    card.setAttribute('data-name', creature.name);
+                    card.setAttribute('data-description', creature.description);
+                    card.setAttribute('data-diet', creature.diet);
 
+                    const cardTitle = document.createElement('div');
+                    cardTitle.classList.add('card-title');
                     const name = document.createElement('h3');
                     name.textContent = creature.name;
+                    cardTitle.appendChild(name);
 
+                    const cardDescription = document.createElement('div');
+                    cardDescription.classList.add('card-description');
                     const description = document.createElement('p');
                     description.textContent = creature.description;
+                    cardDescription.appendChild(description);
 
-                    const diet = document.createElement('p');
-
-                    // Add diet icons based on the diet type
                     const dietIcon = document.createElement('span');
                     dietIcon.classList.add('diet-icon');
                     if (creature.diet.toLowerCase() === 'carnivore') {
@@ -80,17 +144,23 @@
                         dietIcon.innerHTML = '🌿';  // Herb icon
                         dietIcon.setAttribute('title', 'Herbivore');
                     }
-                    
-                    diet.appendChild(dietIcon);
 
-                    card.appendChild(name);
-                    card.appendChild(description);
-                    card.appendChild(diet);
+                    const creatureImage = document.createElement('img');
+                    creatureImage.classList.add('creature-image');
+                    creatureImage.src = `img/${creature.image}`;
+
+                    // Add click event to open Ark Wiki page
+                    card.addEventListener('click', () => openArkWikiPage(creature.name));
+
+                    card.appendChild(dietIcon);
+                    card.appendChild(cardTitle);
+                    card.appendChild(cardDescription);
+                    card.appendChild(creatureImage);
 
                     cardContainer.appendChild(card);
                 });
             })
-            .catch(error => console.error('Error loading JSON:', error));
+            .catch(error => console.error('Error fetching data:', error));
     </script>
 </body>
 </html>
