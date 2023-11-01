@@ -2,7 +2,7 @@
   {"name": "Achatina", "description": "Generates cementing paste and organic polymer.", "diet": "Herbivore"},
   {"name": "Allosaurus", "description": "High DPS bleed and pack bonus.", "diet": "Carnivore"},
   {"name": "Ankylosaurus", "description": "Superior metal, crystal, oil, flint, and obsidian gathering.", "diet": "Herbivore"},
-  {"name": "Anglerfish", "description": "Collects angler gel and silica pearls.", "diet": "Carnivore"},
+  {"name": "Angler", "description": "Collects angler gel and silica pearls.", "diet": "Carnivore"},
   {"name": "Araneo", "description": "Slows enemies with web attack.", "diet": "Carnivore"},
   {"name": "Archaeopteryx", "description": "Passively gathers tree sap and acts as a parachute.", "diet": "Herbivore"},
   {"name": "Argentavis", "description": "High weight flyer with a smithy saddle.", "diet": "Carnivore"},
