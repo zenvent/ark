@@ -64,6 +64,11 @@
             height: 120px;
             margin-left: 20px;
             filter: invert(100%); /* Invert the image colors */
+            display: none; /* Initially hide the image */
+        }
+
+        .card:hover .creature-image {
+            display: block; /* Display the image when card is hovered */
         }
 
         input[type="text"] {
@@ -119,7 +124,7 @@
         }
 
         // Fetch the JSON data from dinos.json
-        fetch('dinos.json')
+        fetch('creatures.json')
             .then(response => response.json())
             .then(data => {
                 data.forEach(creature => {
@@ -153,7 +158,7 @@
 
                     const creatureImage = document.createElement('img');
                     creatureImage.classList.add('creature-image');
-                    creatureImage.src = `img/${creature.name}.png`;
+                    creatureImage.src = `https://www.dododex.com/media/creature/${creature.name.toLowerCase().replace(' ','')}.png`;
 
                     // Add click event to open Ark Wiki page
                     card.addEventListener('click', () => openArkWikiPage(creature.name));
