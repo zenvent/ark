@@ -78,6 +78,11 @@ input[type="text"] {
     color: var(--text);
 }
 
+::placeholder {
+    color: var(--text);
+    opacity: 1; /* Firefox */
+  }
+
 .diet-icon:hover {
     cursor: help;
 }
