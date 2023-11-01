@@ -77,7 +77,6 @@
   {"name": "Quetzal", "description": "Platform saddle, high health and weight.", "diet": "Herbivore"},
   {"name": "Raptor", "description": "Pack bonus and vocalizations provide buffs.", "diet": "Carnivore"},
   {"name": "Rex", "description": "Best tank and DPS for bosses, has a roar ability.", "diet": "Carnivore"},
-  {"name": "Tek Rex", "description": "Slightly more powerful than Rex.", "diet": "Carnivore"},
   {"name": "Sabertooth", "description": "Gathers chitin, keratin, and hide efficiently.", "diet": "Carnivore"},
   {"name": "Salmon", "description": "Can be killed for prime fish.", "diet": "Carnivore"},
   {"name": "Sarco", "description": "Quick water movement, amphibious, no stamina drain.", "diet": "Carnivore"},
