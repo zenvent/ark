@@ -63,12 +63,6 @@
         .creature-image {
             height: 120px;
             margin-left: 20px;
-            filter: invert(100%); /* Invert the image colors */
-            display: none; /* Initially hide the image */
-        }
-
-        .card:hover .creature-image {
-            display: block; /* Display the image when card is hovered */
         }
 
         input[type="text"] {
@@ -124,7 +118,7 @@
         }
 
         // Fetch the JSON data from dinos.json
-        fetch('creatures.json')
+        fetch('dinos.json')
             .then(response => response.json())
             .then(data => {
                 data.forEach(creature => {
