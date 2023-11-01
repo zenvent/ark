@@ -22,6 +22,7 @@
     </style>
 </head>
 <body>
+    <input type="text" id="search" placeholder="Search creatures">
     <div id="creature-cards"></div>
 
     <script>
@@ -29,10 +30,29 @@
             .then(response => response.json())
             .then(data => {
                 const cardContainer = document.getElementById('creature-cards');
+                const searchInput = document.getElementById('search');
+
+                // Function to filter cards based on search input
+                function filterCards() {
+                    const searchTerm = searchInput.value.toLowerCase();
+
+                    data.forEach(creature => {
+                        const card = document.getElementById(`card-${creature.name}`);
+                        if (!creature.name.toLowerCase().includes(searchTerm)) {
+                            card.style.display = 'none';  // Hide the card
+                        } else {
+                            card.style.display = 'block'; // Show the card
+                        }
+                    });
+                }
+
+                // Attach event listener to search input
+                searchInput.addEventListener('input', filterCards);
 
                 data.forEach(creature => {
                     const card = document.createElement('div');
                     card.classList.add('card');
+                    card.id = `card-${creature.name}`;
 
                     const name = document.createElement('h3');
                     name.textContent = creature.name;
