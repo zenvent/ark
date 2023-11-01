@@ -1,8 +1,9 @@
 :root {
-    --bg: #0c313e;
-    --fg: #18637a;
-    --accent: #b7f2fd;
-    --text: #e9dbd6;
+    --bg: #226b9c;
+    --fg: #174869;
+    --accent: #b0c8dc;
+    --title: #e3ffff;
+    --text: #edf9ff;
   }
   
 body {
@@ -18,8 +19,7 @@ body {
 
 .card {
     background-color: var(--fg);
-    border: 1px solid var(--accent);
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     margin: 10px;
     width: 400px;
@@ -33,13 +33,12 @@ body {
 }
 
 .card:hover {
-    filter: drop-shadow(0px 0px 1px --accent);
+    filter: drop-shadow(0px 0px 2px var(--accent));
 }
 
 .card h3 {
     font-size: 24px;
-    color: var(--accent);
-    margin: 0;
+    color: var(--title);
 }
 
 .card-title {
