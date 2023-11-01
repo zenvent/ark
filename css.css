@@ -1,0 +1,74 @@
+body {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+#creature-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #222222;
+    border: 1px solid #222222;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+    transition: border-color 0.1s;
+}
+
+.card:hover {
+    border-color: #1cb4c8;
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #1cb4c8;
+    margin: 0;
+}
+
+.card-title {
+    flex: 1;
+    text-align: left; /* Align title to the left */
+    position: absolute;
+    top: 10px; /* Position title at the top left corner */
+    left: 10px;
+}
+
+.card-description {
+    flex: 2;
+    font-size: 16px;
+}
+
+.diet-icon {
+    font-size: 22px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.creature-image {
+    max-height: 140px;
+    max-width: 140px;
+    margin-left: 20px;
+}
+
+input[type="text"] {
+    font-size: 24px;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+.diet-icon:hover {
+    cursor: help;
+}
