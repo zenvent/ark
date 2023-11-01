@@ -38,10 +38,14 @@
 
                     data.forEach(creature => {
                         const card = document.getElementById(`card-${creature.name}`);
-                        if (!creature.name.toLowerCase().includes(searchTerm)) {
-                            card.style.display = 'none';  // Hide the card
-                        } else {
+                        const nameMatch = creature.name.toLowerCase().includes(searchTerm);
+                        const descriptionMatch = creature.description.toLowerCase().includes(searchTerm);
+                        const dietMatch = creature.diet.toLowerCase().includes(searchTerm);
+
+                        if (nameMatch || descriptionMatch || dietMatch) {
                             card.style.display = 'block'; // Show the card
+                        } else {
+                            card.style.display = 'none';  // Hide the card
                         }
                     });
                 }
