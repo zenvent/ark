@@ -43,6 +43,8 @@ const cardContainer = document.getElementById('creature-cards');
                 console.error('Error fetching data:', error);
                 createCard({"name": "Dodo", "description": "Failed to retreive data, this is a mock.", "diet": "Herbivore"});
                 createCard({"name": "Rex", "description": "More mocked data for this test.", "diet": "Carnivore"});
+                createCard({"name": "Basilosaurus", "description": "Generates oil, immune to shock damage.", "diet": "Carnivore"});
+                createCard({"name": "Diplodocus", "description": "Can carry up to 11 players, has knockback.", "diet": "Herbivore"});                
             });
 
 function createCard(creature) {
