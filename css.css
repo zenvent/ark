@@ -20,6 +20,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background: linear-gradient(45deg, var(--bg), var(--fg));
+    background-attachment: fixed;
 }
 
 #creature-cards {
@@ -75,9 +76,11 @@ body {
 }
 
 .creature-image {
-    max-height: 140px;
-    max-width: 140px;
-    margin-left: 20px;
+    margin-right: -10px;
+    object-position: left top;
+    width: 180px;
+    height: 150px;
+    object-fit: cover;
 }
 
 input[type="text"] {
