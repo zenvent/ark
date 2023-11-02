@@ -2,7 +2,7 @@
     --bg: #226b9c;
     --fg: #174869;
     --accent: #b0c8dc;
-    --title: #eeffff;
+    --title: #7dccf3;
     --text: #edf9ff;
   }
 
@@ -32,7 +32,8 @@ body {
     margin: 10px;
     width: 400px;
     height: 120px;
-    border: 1px var(--accent);
+    border-color: var(--accent);
+    border-width: 1px;
     display: flex;
     flex-direction: row;
     align-items: center;
