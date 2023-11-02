@@ -63,7 +63,7 @@
   {"name": "Ovis", "description": "Harvest wool, climb cliffs, great food for taming carnivores.", "diet": "Herbivore"},
   {"name": "Pachy", "description": "Attacks do torpor, charge attack damages structures.", "diet": "Herbivore"},
   {"name": "Pachyrhinosaurus", "description": "Uses pheromones to affect Dino behavior.", "diet": "Herbivore"},
-  {"name": "Paraceratherium", "description": "Platform saddle with decent speed.", "diet": "Herbivore"},
+  {"name": "Paracer", "description": "Paraceratherium. Platform saddle with decent speed.", "diet": "Herbivore"},
   {"name": "Parasaur", "description": "Fear ability and can act as a tripwire.", "diet": "Herbivore"},
   {"name": "Pegomastax", "description": "Steals items from players, acts as a backpack.", "diet": "Herbivore"},
   {"name": "Pelagornis", "description": "Gathers organic polymer, can fish while riding.", "diet": "Herbivore"},

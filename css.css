@@ -78,6 +78,12 @@ body {
     width: 180px;
     height: 150px;
     object-fit: cover;
+    transition: hover ease 1s;
+}
+
+.creature-image:hover {
+    width: auto;
+    height: auto;
 }
 
 input[type="text"] {
