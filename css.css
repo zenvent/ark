@@ -1,9 +1,11 @@
 :root {
-    --bg: #226b9c;
-    --fg: #174869;
+    --bg: #1c5d87;
+    --fg: #134462;
+    --cardbg: #186591;
+    --cardfg: #18537b;
     --accent: #b0c8dc;
-    --title: #7dccf3;
-    --text: #edf9ff;
+    --title: #FFFFFF;
+    --text: #9cd1f2;
   }
 
 html {
@@ -26,7 +28,7 @@ body {
 }
 
 .card {
-    background-color: var(--bg);
+    background: linear-gradient(45deg, var(--cardbg), var(--cardfg));
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
