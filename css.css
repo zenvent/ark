@@ -2,14 +2,22 @@
     --bg: #226b9c;
     --fg: #174869;
     --accent: #b0c8dc;
-    --title: #e3ffff;
+    --title: #eeffff;
     --text: #edf9ff;
   }
-  
+
+html {
+    height: 100%;
+}
+
 body {
-    background-color: var(--bg);
     color: var(--text);
-    /* font-family: Arial, sans-serif; */
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(45deg, var(--bg), var(--fg));
 }
 
 #creature-cards {
@@ -24,6 +32,7 @@ body {
     margin: 10px;
     width: 400px;
     height: 120px;
+    border: 1px var(--accent);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -33,12 +42,13 @@ body {
 }
 
 .card:hover {
-    filter: drop-shadow(0px 0px 2px var(--accent));
+    filter: drop-shadow(0px 0px 5px var(--accent));
 }
 
 .card h3 {
     font-size: 24px;
     color: var(--title);
+    margin: 0;
 }
 
 .card-title {
@@ -72,14 +82,13 @@ input[type="text"] {
     font-size: 24px;
     padding: 5px;
     margin: 10px;
+    background: transparent;
     border: none;
-    background-color: var(--bg);
     color: var(--text);
 }
 
 ::placeholder {
     color: var(--text);
-    opacity: 1; /* Firefox */
   }
 
 .diet-icon:hover {
