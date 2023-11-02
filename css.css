@@ -78,12 +78,14 @@ body {
     width: 180px;
     height: 150px;
     object-fit: cover;
-    transition: hover ease 1s;
+    transition: transform 0.4s;
 }
 
 .creature-image:hover {
+    transform: scale(2);
     width: auto;
     height: auto;
+    z-index: auto;
 }
 
 input[type="text"] {
