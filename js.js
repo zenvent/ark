@@ -57,7 +57,7 @@ const cardContainer = document.getElementById('creature-cards');
                     const dietIcon = document.createElement('span');
                     dietIcon.classList.add('diet-icon');
                     if (creature.diet.toLowerCase() === 'carnivore') {
-                        dietIcon.innerHTML = '&#127830;';  // Meat icon
+                        dietIcon.innerHTML = '🥩';  // Meat icon
                         dietIcon.setAttribute('title', 'Carnivore');
                     } else if (creature.diet.toLowerCase() === 'herbivore') {
                         dietIcon.innerHTML = '🌿';  // Herb icon
