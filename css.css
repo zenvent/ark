@@ -29,14 +29,13 @@ body {
 }
 
 .card {
-    border: 1px solid var(--accent);
+    border: 1px solid var(--text);
     background: linear-gradient(45deg, var(--cardbg), var(--cardfg));
     border-radius: 7px;
     padding: 10px;
     margin: 10px;
     width: 400px;
     height: 120px;
-    border-color: var(--accent);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,6 +89,7 @@ input[type="text"] {
     background: transparent;
     border: none;
     color: var(--text);
+    border-bottom: 2px solid var(--text);
 }
 
 ::placeholder {
